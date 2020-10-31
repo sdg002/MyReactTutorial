@@ -4,6 +4,7 @@ import './App.css';
 import SampleComponent from './components/SampleComponent'
 import SampleComponentCreateElement from "./components/SampleComponentCreateElement"
 import SampleWithProps from "./components/SampleWithProps"
+import ClickCounter from "./components/ClickCounter"
 
 class App extends Component
 {
@@ -18,6 +19,7 @@ class App extends Component
       <SampleComponentCreateElement></SampleComponentCreateElement>
       <SampleWithProps firstName="John" lastName="Doe"></SampleWithProps>
       <SampleWithProps firstName="Jane" lastName="Doe"></SampleWithProps>
+      <ClickCounter></ClickCounter>
     </div>
     );
   }
