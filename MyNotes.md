@@ -120,5 +120,28 @@ class SampleComponentCreateElement extends Component
 ```
 You will need to reference this in App.js
 
+# Component which accepts props
+```
+class SampleWithProps extends Component
+{
+    constructor(props)
+    {
+        super(props);
+    }
+    render()
+    {
+        return <div>
+            This is my <strong>sample</strong>  component with 
+            props.FirstName:<strong>{this.props.firstName}</strong>  and LastName:<strong>{this.props.lastName}</strong> </div>
+    }
+}
 
+```
+
+App.js
+```
+      <SampleWithProps firstName="John" lastName="Doe"></SampleWithProps>
+      <SampleWithProps firstName="Jane" lastName="Doe"></SampleWithProps>
+
+```
 
