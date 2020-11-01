@@ -5,8 +5,9 @@ import SampleComponent from './components/SampleComponent'
 import SampleComponentCreateElement from "./components/SampleComponentCreateElement"
 import SampleWithProps from "./components/SampleWithProps"
 import ClickCounter from "./components/ClickCounter"
-import MyBootStrapDemo  from "./components/MyBootStrapDemo"
+
 import MyBootStrapLayout from  "./components/MyBootStrapLayout"
+
 
 class App extends Component
 {
@@ -22,7 +23,7 @@ class App extends Component
       <SampleWithProps firstName="John" lastName="Doe"></SampleWithProps>
       <SampleWithProps firstName="Jane" lastName="Doe"></SampleWithProps>
       <ClickCounter></ClickCounter> */}
-      {/* <MyBootStrapDemo userName="JohnDoe"></MyBootStrapDemo> */}
+      
       <MyBootStrapLayout></MyBootStrapLayout>
     </div>
     );
