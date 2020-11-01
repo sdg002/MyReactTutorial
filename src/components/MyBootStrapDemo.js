@@ -10,6 +10,7 @@ class MyBootStrapDemo extends Component {
             todoItems:this.createStaticToDoItems(),
             newItemText:""
         }
+        console.log("ctor of MyBootStrapDemo task list")
     }
     changeStateData=()=>
     {
@@ -65,7 +66,7 @@ class MyBootStrapDemo extends Component {
         event.preventDefault();
     }
     OnDeleteClick=(todo)=>{
-        console.log(`Click on button ${todo.action} `)
+        window.alert(`Click on button with task:${todo.action} `)
     }
     todoTableRows=()=>
     {
@@ -102,6 +103,7 @@ class MyBootStrapDemo extends Component {
     }
 
     render() {
+        console.log("render method of MyBootStrapDemo task list")
         return (
 
             <div> 

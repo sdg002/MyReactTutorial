@@ -190,3 +190,89 @@ class ClickCounter extends Component
 - You need to call `this.setState` to make a change
 - Very much asynchronous
 - You will have to remember to use call backs if you want to do something sequential after setting the state
+
+
+# Routing using Router
+## App.js
+Notice that the Nav menu is within HashRouter element
+```
+  return( 
+      <HashRouter>
+        <ul>
+          <li>
+            <Link to="">Task list</Link>
+          </li>
+          <li>
+            <Link to="modaldemo">Modal demo</Link>
+          </li>
+          <li>
+            <Link to="datagriddemo">Datagrid demo</Link>
+          </li>
+        </ul>
+        <hr />        
+
+        <Switch>
+          <Route path="/" exact>
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/tasklist">
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/modaldemo" >
+            <MyModalDemo></MyModalDemo>
+          </Route>
+          <Route path="/datagriddemo" >
+            <MyDataGrid></MyDataGrid>
+          </Route>
+        </Switch>                  
+    </HashRouter>);    
+
+```
+
+
+# Routing using Router and Bootstrap NAV
+
+
+## MyBootStrapNav component which uses BS 
+- Notice the usage of Link element and not the A tag
+- Notice we are not using hash symbol
+
+```
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a className="navbar-brand" to="/">My company</a>
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <Link className="nav-link" to="tasklist">Task list</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link"  to="modaldemo">Demo of modal</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="datagriddemo">Demo of data grid</Link>
+                </li>
+            </ul>
+        </nav>
+
+```
+## App.js
+```
+  return( 
+      <HashRouter>
+        <MyBootStrapNav></MyBootStrapNav>
+        <Switch>
+          <Route path="/" exact>
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/tasklist">
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/modaldemo" >
+            <MyModalDemo></MyModalDemo>
+          </Route>
+          <Route path="/datagriddemo" >
+            <MyDataGrid></MyDataGrid>
+          </Route>
+        </Switch>                  
+    </HashRouter>);    
+
+```

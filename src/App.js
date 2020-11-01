@@ -6,27 +6,46 @@ import SampleComponentCreateElement from "./components/SampleComponentCreateElem
 import SampleWithProps from "./components/SampleWithProps"
 import ClickCounter from "./components/ClickCounter"
 
+import MyBootStrapNav from "./components/MyBootStrapNav"
 import MyBootStrapLayout from  "./components/MyBootStrapLayout"
+
+import MyBootStrapDemo from  "./components/MyBootStrapDemo"
+import MyDataGrid from  "./components/MyDataGrid"
+import MyModalDemo from  "./components/MyModalDemo"
+
+import {
+  HashRouter,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
 
 
 class App extends Component
 {
   render()
   {
-  return (
-    <div className='App'>
-      {/* // <img src={logo} className="App-logo" alt="logo" />
-      <div>This is a Class component in App.js</div>
-      <SampleComponent></SampleComponent>
-      <SampleComponent></SampleComponent>
-      <SampleComponentCreateElement></SampleComponentCreateElement>
-      <SampleWithProps firstName="John" lastName="Doe"></SampleWithProps>
-      <SampleWithProps firstName="Jane" lastName="Doe"></SampleWithProps>
-      <ClickCounter></ClickCounter> */}
-      
-      <MyBootStrapLayout></MyBootStrapLayout>
-    </div>
-    );
+
+  return( 
+      <HashRouter>
+        <MyBootStrapNav></MyBootStrapNav>
+        <Switch>
+          <Route path="/" exact>
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/tasklist">
+            <MyBootStrapDemo></MyBootStrapDemo>
+          </Route>
+          <Route path="/modaldemo" >
+            <MyModalDemo></MyModalDemo>
+          </Route>
+          <Route path="/datagriddemo" >
+            <MyDataGrid></MyDataGrid>
+          </Route>
+        </Switch>                  
+    </HashRouter>);    
   }
 }
 
