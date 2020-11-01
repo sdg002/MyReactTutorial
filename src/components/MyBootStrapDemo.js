@@ -64,7 +64,9 @@ class MyBootStrapDemo extends Component {
         this.OnCreateNewTodoClick();
         event.preventDefault();
     }
-
+    OnDeleteClick=(todo)=>{
+        console.log(`Click on button ${todo.action} `)
+    }
     todoTableRows=()=>
     {
         var allItems=this.state.todoItems;
@@ -75,6 +77,9 @@ class MyBootStrapDemo extends Component {
                     <input type="checkbox" 
                     checked={item.done} 
                     onChange={()=>this.toggleTodo(item)}></input>
+                </td>
+                <td>
+                    <button className="btn btn-danger btn-sm" onClick={()=>this.OnDeleteClick(item)}>Delete</button>
                 </td>
             </tr>
             );
@@ -120,6 +125,8 @@ class MyBootStrapDemo extends Component {
                             onClick={this.changeStateData}
                             >Change</button>
 
+                        <label>Display {this.state.todoItems.length} items</label>
+
                     </form>
 
                     <table className="table table-striped table=bordered">
@@ -127,6 +134,7 @@ class MyBootStrapDemo extends Component {
                             <tr>
                                 <th>Description</th>
                                 <th>Done</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
