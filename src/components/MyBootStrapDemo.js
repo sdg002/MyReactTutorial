@@ -82,9 +82,17 @@ class MyBootStrapDemo extends Component {
     }
     toggleTodo=(todo)=>
     {
-        //var matchingTodoItem = this.state.todoItems.
-        //this.setState
-        console.log("toggleTodo");
+        console.log(`toggleTodo checkeditem=${todo.action}`);
+        var allItems=this.state.todoItems;
+        var existingItem=allItems.find(item=>item.action == todo.action);
+        if (existingItem==null)
+        {
+            return;
+        }
+        var newDone = !existingItem.done;
+        existingItem.done=newDone
+        this.setState({todoItems:allItems})
+
     }
 
     render() {
