@@ -43,6 +43,26 @@ class MyBootStrapDemo extends Component {
     createNewTodo=()=>
     {
         console.log("Add new item");
+        if (!this.state.newItemText)
+        {
+            return;
+        }
+        var allItems=this.state.todoItems;
+        var existingItem=allItems.find(item=>item.action == this.state.newItemText);
+        if (existingItem!=null)
+        {
+            return;
+        }
+        var newItem={action:this.state.newItemText,done:false};
+        allItems.push(newItem);
+        this.setState({todoItems:allItems});
+    }
+    OnNewItemSubmit=(event)=>
+    {
+        console.log("OnNewItemSubmit");
+        this.createNewTodo();
+        this.setState({newItemText:""});
+        event.preventDefault();
     }
 
     todoTableRows=()=>
@@ -52,11 +72,19 @@ class MyBootStrapDemo extends Component {
             <tr key={item.action}>
                 <td>{item.action}</td>
                 <td>
-                    <input type="checkbox" checked={item.done}></input>
+                    <input type="checkbox" 
+                    checked={item.done} 
+                    onChange={()=>this.toggleTodo(item)}></input>
                 </td>
             </tr>
             );
         return tableRows;
+    }
+    toggleTodo=(todo)=>
+    {
+        //var matchingTodoItem = this.state.todoItems.
+        //this.setState
+        console.log("toggleTodo");
     }
 
     render() {
@@ -68,7 +96,7 @@ class MyBootStrapDemo extends Component {
                         {this.state.userName}'s' To Do List &nbsp;&nbsp; {this.pendingTodoItems().length} items to do
                 </h4>
                 <div className="container-fluid">
-                    <form className="form-inline">
+                    <form className="form-inline" onSubmit={this.OnNewItemSubmit}>
                         <label htmlFor="newText">New item:</label>
                         <input 
                             id="newText"
