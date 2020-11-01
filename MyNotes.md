@@ -276,3 +276,40 @@ Notice that the Nav menu is within HashRouter element
     </HashRouter>);    
 
 ```
+
+# React Modal
+## Declare state variables and control the open/close via setState
+```
+    OnShowModalClick=()=>
+    {
+        //alert("show me a modal")
+        const existingState=this.state.isModalOpen;
+        this.setState({
+            isModalOpen:!existingState
+        });
+    }
+
+```
+
+## You will need to create a Modal element
+```
+    <Modal isOpen={this.state.isModalOpen}>
+        <h3>Some modal dialog</h3>
+        <p>contents of the modal</p>
+        <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnOkClick(true)}>Ok</button>
+        <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnOkClick(false)}>Cancel</button>
+    </Modal>
+
+```
+
+## How to close the Modal
+```
+    OnModalCloseClick=(retval)=>
+    {
+        this.setState({
+            isModalOpen:false
+        });
+        console.log(`Which button was click? Ok=${retval} Cancel=${!retval}`)
+
+    }
+```

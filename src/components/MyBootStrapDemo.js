@@ -131,7 +131,7 @@ class MyBootStrapDemo extends Component {
 
                     </form>
 
-                    <table className="table table-striped table=bordered">
+                    <table className="table table-sm table-bordered table-striped " >
                         <thead>
                             <tr>
                                 <th>Description</th>
