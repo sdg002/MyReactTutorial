@@ -16,7 +16,7 @@ class MyBootStrapDemo extends Component {
         console.log("click")
         this.setState({
             userName:this.state.userName === "Adam"? "Bob":"Adam",
-            newItemText:""
+            newItemText:"",
         })
     }
     updateNewTextValue = (event)=>
@@ -33,19 +33,43 @@ class MyBootStrapDemo extends Component {
         items.push({action:"Call Joe", done:false});
         return items;
     }
+    pendingTodoItems=()=>
+    {
+        console.log("Pending todo items");
+        var allItems=this.state.todoItems;
+        var pendingItems=allItems.filter(t=>t.done);
+        return pendingItems;
+    }
     createNewTodo=()=>
     {
         console.log("Add new item");
     }
+
+    todoTableRows=()=>
+    {
+        var allItems=this.state.todoItems;
+        var tableRows=allItems.map(item=>
+            <tr key={item.action}>
+                <td>{item.action}</td>
+                <td>
+                    <input type="checkbox" checked={item.done}></input>
+                </td>
+            </tr>
+            );
+        return tableRows;
+    }
+
     render() {
         return (
 
             <div> 
                 <h4 
-                    className="bg-primary text-white text-center p-2"> {this.state.userName}'s' To Do List </h4>
+                    className="bg-primary text-white text-center p-2"> 
+                        {this.state.userName}'s' To Do List &nbsp;&nbsp; {this.pendingTodoItems().length} items to do
+                </h4>
                 <div className="container-fluid">
                     <form className="form-inline">
-                        <label for="newText">New item:</label>
+                        <label htmlFor="newText">New item:</label>
                         <input 
                             id="newText"
                             className="form-control" 
@@ -60,9 +84,18 @@ class MyBootStrapDemo extends Component {
                             >Change</button>
 
                     </form>
-                    <div className="my-1">
-                    </div>
-                    
+
+                    <table className="table table-striped table=bordered">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Done</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.todoTableRows()}
+                        </tbody>
+                    </table>                    
 
                 </div>
             </div>
