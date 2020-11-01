@@ -5,6 +5,7 @@ import SampleComponent from './components/SampleComponent'
 import SampleComponentCreateElement from "./components/SampleComponentCreateElement"
 import SampleWithProps from "./components/SampleWithProps"
 import ClickCounter from "./components/ClickCounter"
+import MyBootStrapDemo  from "./components/MyBootStrapDemo"
 
 class App extends Component
 {
@@ -12,14 +13,15 @@ class App extends Component
   {
   return (
     <div className='App'>
-      <img src={logo} className="App-logo" alt="logo" />
+      {/* // <img src={logo} className="App-logo" alt="logo" />
       <div>This is a Class component in App.js</div>
       <SampleComponent></SampleComponent>
       <SampleComponent></SampleComponent>
       <SampleComponentCreateElement></SampleComponentCreateElement>
       <SampleWithProps firstName="John" lastName="Doe"></SampleWithProps>
       <SampleWithProps firstName="Jane" lastName="Doe"></SampleWithProps>
-      <ClickCounter></ClickCounter>
+      <ClickCounter></ClickCounter> */}
+      <MyBootStrapDemo userName="JohnDoe"></MyBootStrapDemo>
     </div>
     );
   }
