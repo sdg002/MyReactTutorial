@@ -40,7 +40,7 @@ class MyBootStrapDemo extends Component {
         var pendingItems=allItems.filter(t=>t.done);
         return pendingItems;
     }
-    createNewTodo=()=>
+    OnCreateNewTodoClick=()=>
     {
         console.log("Add new item");
         if (!this.state.newItemText)
@@ -56,12 +56,12 @@ class MyBootStrapDemo extends Component {
         var newItem={action:this.state.newItemText,done:false};
         allItems.push(newItem);
         this.setState({todoItems:allItems});
+        this.setState({newItemText:""});
     }
     OnNewItemSubmit=(event)=>
     {
         console.log("OnNewItemSubmit");
-        this.createNewTodo();
-        this.setState({newItemText:""});
+        this.OnCreateNewTodoClick();
         event.preventDefault();
     }
 
@@ -80,6 +80,7 @@ class MyBootStrapDemo extends Component {
             );
         return tableRows;
     }
+    
     toggleTodo=(todo)=>
     {
         console.log(`toggleTodo checkeditem=${todo.action}`);
@@ -100,7 +101,7 @@ class MyBootStrapDemo extends Component {
 
             <div> 
                 <h4 
-                    className="bg-primary text-white text-center p-2"> 
+                    className="bg-primary text-white text-center"> 
                         {this.state.userName}'s' To Do List &nbsp;&nbsp; {this.pendingTodoItems().length} items to do
                 </h4>
                 <div className="container-fluid">
@@ -112,10 +113,10 @@ class MyBootStrapDemo extends Component {
                             value={this.state.newItemText} onChange={this.updateNewTextValue}></input>
 
                         <button type="button"
-                            className="btn btn-primary"  onClick={this.createNewTodo}>Add</button>
+                            className="btn btn-primary m-1"  onClick={this.OnCreateNewTodoClick}>Add</button>
 
                         <button type="button"
-                            className="btn btn-secondary" 
+                            className="btn btn-secondary  m-1" 
                             onClick={this.changeStateData}
                             >Change</button>
 
