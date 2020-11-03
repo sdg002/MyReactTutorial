@@ -313,3 +313,29 @@ Notice that the Nav menu is within HashRouter element
 
     }
 ```
+
+# How to interact with a child component and/or reach to change of change of properties in a component?
+You should implement `componentDidUpdate` overridable method in the component. Be careful - you need the if-clause 
+```
+    componentDidUpdate(prevProps)
+    {
+        console.log(`did update old value:${prevProps.isOpen} , new value:${this.props.isOpen}`)
+        if (this.props.isOpen != prevProps.isOpen)
+        {
+            this.setState({
+                    isOpen:this.props.isOpen
+                }
+            );    
+        }
+    }
+
+```
+
+## How should the parent notify the child component?
+
+The parent should 
+1. Bind the props of the child to a `state` property
+1. Change the state by calling `setState`. This will fire componentDidUpdate inside the child component
+```
+<MyModalOkCancelDialog title="My alert title" text="This is my alert text" isOpen={this.state.isOkCancelModalOpen}></MyModalOkCancelDialog>
+```

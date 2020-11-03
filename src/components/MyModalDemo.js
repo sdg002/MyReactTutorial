@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Modal from "react-modal"
+import MyModalOkCancelDialog from './MyModalOkCancelDialog'
 
 class MyModalDemo extends Component {
     constructor(props)
@@ -8,7 +8,8 @@ class MyModalDemo extends Component {
         super(props);
         this.state=
         {
-            isModalOpen:false
+            isModalOpen:false,
+            isOkCancelModalOpen:false
         }
     }
 
@@ -19,7 +20,15 @@ class MyModalDemo extends Component {
             isModalOpen:!existingState
         });
     }
-    OnOkClick=(retval)=>
+
+    OnShowReusableModalClick=()=>
+    {
+        this.setState({
+            isOkCancelModalOpen:!this.state.isOkCancelModalOpen
+        });
+    }
+
+    OnModalCloseClick=(retval)=>
     {
         this.setState({
             isModalOpen:false
@@ -32,19 +41,18 @@ class MyModalDemo extends Component {
             <div>
                 <h1>Demo of modal</h1>
                 <button className="btn btn-primary btn-sm" onClick={()=>this.OnShowModalClick()}>Show me a modal</button>
+                <button className="btn btn-secondary btn-sm" onClick={()=>this.OnShowReusableModalClick()}>Show me a reusable Ok Cancel modal dialog</button>
                 <Modal isOpen={this.state.isModalOpen}>
                     <h3>Some modal dialog</h3>
                     <p>contents of the modal</p>
-                    <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnOkClick(true)}>Ok</button>
-                    <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnOkClick(false)}>Cancel</button>
+                    <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnModalCloseClick(true)}>Ok</button>
+                    <button className="btn btn-sm btn-primary m-1" onClick={()=>this.OnModalCloseClick(false)}>Cancel</button>
                 </Modal>
+                <MyModalOkCancelDialog title="My alert title" text="This is my alert text" isOpen={this.state.isOkCancelModalOpen}></MyModalOkCancelDialog>
             </div>
         );
     }
 }
 
-MyModalDemo.propTypes = {
-
-};
 
 export default MyModalDemo;
