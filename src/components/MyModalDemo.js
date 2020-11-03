@@ -42,6 +42,7 @@ class MyModalDemo extends Component {
                 <h1>Demo of modal</h1>
                 <button className="btn btn-primary btn-sm" onClick={()=>this.OnShowModalClick()}>Show me a modal</button>
                 <button className="btn btn-secondary btn-sm" onClick={()=>this.OnShowReusableModalClick()}>Show me a reusable Ok Cancel modal dialog</button>
+                
                 <Modal isOpen={this.state.isModalOpen}>
                     <h3>Some modal dialog</h3>
                     <p>contents of the modal</p>

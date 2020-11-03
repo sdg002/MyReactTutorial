@@ -16,7 +16,7 @@ class MyModalOkCancelDialog extends Component {
         if (this.props.isOpen != prevProps.isOpen)
         {
             this.setState({
-                    isOpen:this.props.isOpen
+                    isOpen:true
                 }
             );    
         }
