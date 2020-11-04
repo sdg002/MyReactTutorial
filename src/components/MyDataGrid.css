@@ -1,0 +1,27 @@
+/*
+Alternate row
+*/
+.MuiDataGrid-row.Mui-odd {
+    background-color: lightgray;
+  }
+  
+  /*
+  Style the selected row
+  */
+.Mui-selected{
+      border-color: black;border-width: 1px;border-style: solid;
+  }
+
+  /*
+  Strange behaviour!
+  The font weight has no effect on the header column
+  Color does change
+  font-style: italic; also works
+  The only way to get it to work is !important
+.MuiDataGrid-colCellTitle{
+      font-size: 14px;font-cp:400;
+  }
+  */
+  .MuiDataGrid-colCellTitle{
+      font-weight:bold !important; 
+  }

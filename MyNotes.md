@@ -339,3 +339,15 @@ The parent should
 ```
 <MyModalOkCancelDialog title="My alert title" text="This is my alert text" isOpen={this.state.isOkCancelModalOpen}></MyModalOkCancelDialog>
 ```
+
+## How should  the child dialog notify the parent when Ok/Cancel has been clicked?
+1. Parent must pass a call back function via props
+1. Arrow functions is important
+1. See `onClose` below
+```
+                <MyModalOkCancelDialog 
+                    title="My alert title" text="This is my alert text" 
+                    onClose={(retval)=>this.OnOkCancelModalDialogCloseCallBack(retval)}
+                    isOpen={this.state.isOkCancelModalOpen}></MyModalOkCancelDialog>
+
+```
