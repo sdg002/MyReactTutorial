@@ -13,7 +13,7 @@ class MyModalOkCancelDialog extends Component {
     componentDidUpdate(prevProps)
     {
         console.log(`did update old value:${prevProps.isOpen} , new value:${this.props.isOpen}`)
-        if (this.props.isOpen != prevProps.isOpen)
+        if (this.props.isOpen !== prevProps.isOpen)
         {
             this.setState({
                     isOpen:true
@@ -21,15 +21,25 @@ class MyModalOkCancelDialog extends Component {
             );    
         }
     }
+
     OnOkClick=()=>
     {
         this.ShowDialog(false);
+        if (this.props.onClose != null)
+        {
+            this.props.onClose(true);
+        }
     }
 
     OnCancelClick=()=>
     {
         this.ShowDialog(false);
+        if (this.props.onClose != null)
+        {
+            this.props.onClose(false);
+        }
     }
+
     ShowDialog(isVisible)
     {
         this.setState({
@@ -46,8 +56,8 @@ class MyModalOkCancelDialog extends Component {
                     <h4>{this.props.title}</h4>
                     <p>{this.props.text}</p>
                     <div>
-                        <button type="button" className="btn btn-primary m-1" onClick={this.OnOkClick}>Ok</button>
-                        <button type="button" className="btn btn-secondary m-1" onClick={this.OnCancelClick}>Cancel</button>
+                        <button type="button" className="btn btn-primary m-1" onClick={()=>this.OnOkClick()}>Ok</button>
+                        <button type="button" className="btn btn-secondary m-1" onClick={()=>this.OnCancelClick()}>Cancel</button>
                     </div>
                 </Modal>
             </div>

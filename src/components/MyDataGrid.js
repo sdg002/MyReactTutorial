@@ -44,8 +44,5 @@ class MyDataGrid extends Component {
     }
 }
 
-MyDataGrid.propTypes = {
-
-};
 
 export default MyDataGrid;
