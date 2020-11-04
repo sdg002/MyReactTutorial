@@ -48,11 +48,14 @@ const columns = [
     },
   ];
 
-class MyDataGrid extends Component {
-    
+class MyDataGrid extends Component {    
     constructor(props) {
         super(props);
         console.log("ctor of MyDataGrid")
+        this.state=
+        {
+          selectedItems:[]
+        }
     }
 
     componentWillMount() {
@@ -68,7 +71,7 @@ class MyDataGrid extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-
+      return true;
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -83,12 +86,57 @@ class MyDataGrid extends Component {
 
     }
 
+    onRowSelected(params)
+    {
+      console.log(`params:${params} this:${this}`)
+      let selectedRow=params.data;
+      let isSelected=params.isSelected;
+      let selectedItems=this.state.selectedItems;
+      if (isSelected === false)
+      {
+        //this.selectedItems.includes(selectedRow.id)
+        console.log(`Selected item ${selectedRow.id} will be removed` )
+        let index=selectedItems.indexOf(selectedRow.id)
+        selectedItems.splice(index,1);
+      }
+      else
+      {
+        console.log(`Selected item ${selectedRow.id} will be added` )
+        selectedItems.push(selectedRow.id);
+      }
+      
+      this.setState( state=>(
+        {
+          selectedItems:selectedItems
+        }));
+
+    }
+    OnShowSelectedItems()
+    {
+      let selectedItems=this.state.selectedItems;
+      let display=selectedItems;
+      alert(display);
+    }
+    GetDisplayOfSelectedItems()
+    {
+      return this.state.selectedItems.join();
+    }
+
     render() {
         return (
             <div>
-                <h1>How to render alternate rows? Get selected rows? Updated single row? Mix bootstrap toolbar? Bold headers?</h1>
+                <h1>  Updated single row via modal UI and then place it back in the datagrid?   Filter the table? </h1>
+                <div className="container-fluid">
+                  <button className="btn btn-primary btn-sm" onClick={()=>this.OnShowSelectedItems()}>Selected rows</button>
+                  <label className="m-2">Count of selected items={this.state.selectedItems.length}</label>
+                  <label className="m-2">The selected items are:{this.state.selectedItems.join()}</label>
+                </div>
                 <div style={{  width: '100%' }}>
-                    <DataGrid rows={rows} columns={columns}   rowsPerPageOptions={null} checkboxSelection  autoHeight={true} rowHeight={30}/>
+                    <DataGrid 
+                      rows={rows} columns={columns}   
+                      rowsPerPageOptions={null} checkboxSelection={true}  autoHeight={true} rowHeight={30}
+                      onRowSelected={(retval)=>this.onRowSelected(retval)}
+                      />
                 </div>                
             </div>
           );
