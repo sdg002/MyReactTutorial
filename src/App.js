@@ -12,6 +12,7 @@ import MyBootStrapLayout from  "./components/MyBootStrapLayout"
 import MyBootStrapDemo from  "./components/MyBootStrapDemo"
 import MyDataGrid from  "./components/MyDataGrid"
 import MyModalDemo from  "./components/MyModalDemo"
+import BootstrapModal from "./components/BootstrapModal"
 
 import {
   HashRouter,
@@ -43,6 +44,9 @@ class App extends Component
           </Route>
           <Route path="/datagriddemo" >
             <MyDataGrid></MyDataGrid>
+          </Route>
+          <Route path="/bootstrapmodal" >
+            <BootstrapModal></BootstrapModal>
           </Route>
         </Switch>                  
     </HashRouter>);    

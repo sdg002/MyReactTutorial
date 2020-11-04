@@ -17,6 +17,9 @@ class MyBootStrapNav extends Component {
                 <li className="nav-item">
                     <Link className="nav-link" to="datagriddemo">Demo of data grid</Link>
                 </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="bootstrapmodal">Demo of Bootstrap modal</Link>
+                </li>
             </ul>
         </nav>
 );
