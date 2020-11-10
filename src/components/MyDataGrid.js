@@ -56,6 +56,27 @@ class MyDataGrid extends Component {
         {
           selectedItems:[]
         }
+        this.dummyRows=this.populateDummyRows(30);
+
+    }
+    populateDummyRows(rowCount)
+    {
+      let rows = [          
+        ]
+      
+        //{ id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 }
+      for(let index=0;index<rowCount;index++)
+      {
+        let newRow = 
+        {
+          id: index, 
+          lastName: `Snow ${index}`, 
+          firstName: `Jon ${index}`, 
+          age: 35 
+        }
+        rows.push(newRow);
+      }
+      return rows;
     }
 
     componentWillMount() {
@@ -133,7 +154,7 @@ class MyDataGrid extends Component {
                 </div>
                 <div style={{  width: '100%' }}>
                     <DataGrid 
-                      rows={rows} columns={columns}   
+                      rows={this.dummyRows} columns={columns} pageSize={15}  
                       rowsPerPageOptions={null} checkboxSelection={true}  autoHeight={true} rowHeight={30}
                       onRowSelected={(retval)=>this.onRowSelected(retval)}
                       />
