@@ -7,6 +7,7 @@ What are we trying to do?
 --------------------------
 - Create BS nav-link from an array of objects
 - Render the active link depending on active Route
+- Short coming - The Link which is currently active is not given any special rendering
 
  */
 const MyBootstrapNavIntelligent = () => {
