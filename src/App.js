@@ -15,6 +15,7 @@ import MyModalDemo from  "./components/MyModalDemo"
 import BootstrapModal from "./components/BootstrapModal"
 import  MyBootstrapNavIntelligent from "./components/MyBootstrapNavIntelligent"
 import  MyBootstrapNavWithNavLink from "./components/MyBootstrapNavWithNavLink"
+import UpDownCounter from "./components/UpDownCounter";
 
 import {
   HashRouter,
@@ -50,7 +51,10 @@ class App extends Component
           <Route path="/bootstrapmodal" >
             <BootstrapModal></BootstrapModal>
           </Route>
-        </Switch>                  
+          <Route path="/updowncounter" >
+            <UpDownCounter></UpDownCounter>
+          </Route>
+        </Switch>
     </HashRouter>);    
   }
 }

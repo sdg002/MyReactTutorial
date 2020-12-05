@@ -13,7 +13,8 @@ const MyBootstrapNavWithNavLink = () => {
         {"title":"Task list", to:"tasklist"},
         {"title":"Demo of modal", to:"modaldemo"},
         {"title":"Demo of data grid", to:"datagriddemo"},
-        {"title":"Demo of Bootstrap modal", to:"bootstrapmodal"}
+        {"title":"Demo of Bootstrap modal", to:"bootstrapmodal"},
+        {"title":"Demo of Up/Down counter", to:"updowncounter"}
     ]
     function  onLinkClick(e)
     {
