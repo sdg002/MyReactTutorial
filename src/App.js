@@ -14,6 +14,7 @@ import MyDataGrid from  "./components/MyDataGrid"
 import MyModalDemo from  "./components/MyModalDemo"
 import BootstrapModal from "./components/BootstrapModal"
 import  MyBootstrapNavIntelligent from "./components/MyBootstrapNavIntelligent"
+import  MyBootstrapNavWithNavLink from "./components/MyBootstrapNavWithNavLink"
 
 import {
   HashRouter,
@@ -32,7 +33,7 @@ class App extends Component
 
   return( 
       <HashRouter>
-        <MyBootstrapNavIntelligent></MyBootstrapNavIntelligent>
+        <MyBootstrapNavWithNavLink></MyBootstrapNavWithNavLink>
         <Switch>
           <Route path="/" exact>
             <MyBootStrapDemo></MyBootStrapDemo>
