@@ -1,6 +1,11 @@
 # Overview
 Some experiments with React and Boostrap
 
+# How to run?
+```npm install```
+
+```npm run start```
+
 
 # Simple Task list
 ![Bootstrap experiments!](images/tasklist.png "Simple task list")
@@ -20,9 +25,3 @@ Some experiments with React and Boostrap
 # Up-down counter
 ![Bootstrap experiments!](images/up_down_counter.png "Up/down counter")
 
-
-
-# How to run?
-```npm install``
-
-```npm run start```
