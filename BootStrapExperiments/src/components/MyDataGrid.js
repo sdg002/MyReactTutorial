@@ -146,7 +146,7 @@ class MyDataGrid extends Component {
     render() {
         return (
             <div>
-                <h1>  Updated single row via modal UI and then place it back in the datagrid?   Filter the table? </h1>
+                <h1>  Grid using Material grid </h1>
                 <div className="container-fluid">
                   <button className="btn btn-primary btn-sm" onClick={()=>this.OnShowSelectedItems()}>Selected rows</button>
                   <label className="m-2">Count of selected items={this.state.selectedItems.length}</label>
