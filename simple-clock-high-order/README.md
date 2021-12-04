@@ -15,6 +15,8 @@ Demonstrates how we are using  `useState` hook and click handlers to create and 
 
 ![High order!](images/high_order.png "Bootstrap experiments")
 
+Demonstrates how we can pass a click handler method via `props` from an outer component to the inner component. This is very useful to de-couple complexity and improve testability
+
 # How to run?
 ```npm install```
 
