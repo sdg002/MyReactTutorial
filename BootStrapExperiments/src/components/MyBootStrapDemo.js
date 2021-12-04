@@ -120,11 +120,13 @@ class MyBootStrapDemo extends Component {
                             value={this.state.newItemText} onChange={this.updateNewTextValue}></input>
 
                         <button type="button"
+                            title="Add a new item to the list"
                             className="btn btn-primary m-1"  onClick={this.OnCreateNewTodoClick}>Add</button>
 
                         <button type="button"
                             className="btn btn-secondary  m-1" 
                             onClick={this.changeStateData}
+                            title="Change name of the person"
                             >Change</button>
 
                         <label>Display {this.state.todoItems.length} items</label>
