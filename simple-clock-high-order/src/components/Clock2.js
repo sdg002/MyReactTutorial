@@ -6,25 +6,25 @@ const clockIntervalMs=1000; //ms
 const Clock2 = () => {
     const clockStyle={ backgroundColor:"ghostwhite"}
     const [currentTime,setTime]=rc.useState(null)
-    const [currentClockInterval,setClockInterval]=rc.useState(null)
+    const [javascriptClockIntervalObject,setJavascriptClockIntervalObject]=rc.useState(null)
 
     let startClockHandler=null;
     let stopClockHandler=null;
 
     rc.useEffect(()=>{
-        console.log(`Inside useEffect window clock=${currentClockInterval}`)
+        console.log(`Inside useEffect window clock=${javascriptClockIntervalObject}`)
     });
 
     stopClockHandler=()=>{
-        console.log(`inside stop handler click ${currentClockInterval}`)
-        clearInterval(currentClockInterval)
-        setClockInterval(null)
+        console.log(`inside stop handler click ${javascriptClockIntervalObject}`)
+        clearInterval(javascriptClockIntervalObject)
+        setJavascriptClockIntervalObject(null)
     }
 
     startClockHandler=()=>{
-        console.log(`inside start handler click ${currentClockInterval}`)
+        console.log(`inside start handler click ${javascriptClockIntervalObject}`)
         let windowClock=setInterval(timeCallBack,clockIntervalMs);
-        setClockInterval(windowClock)
+        setJavascriptClockIntervalObject(windowClock)
     }
 
     const timeCallBack=()=>{
@@ -41,8 +41,8 @@ const Clock2 = () => {
                 New clock, current time is <strong>{currentTime?.toISOString()}</strong>
             </div>
             <div>
-                <button onClick={stopClockHandler} disabled={currentClockInterval==null}>Stop clock</button>
-                <button onClick={startClockHandler} disabled={currentClockInterval!=null}>Start clock</button>
+                <button onClick={stopClockHandler} disabled={javascriptClockIntervalObject==null}>Stop clock</button>
+                <button onClick={startClockHandler} disabled={javascriptClockIntervalObject!=null}>Start clock</button>
             </div>
         </div>
     );
