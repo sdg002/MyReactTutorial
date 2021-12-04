@@ -1,0 +1,13 @@
+div.mypanel
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+div.mypanel>div.titlebar{
+    background-color: skyblue;
+    color: black;
+}
