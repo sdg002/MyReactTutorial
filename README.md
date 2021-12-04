@@ -9,7 +9,7 @@ This is a project which represents my learning and experiments with React
 
 # Simple Clock and high order components
 
-[BootstrapExperiments](/simple-clock-high-order)
+[Simple clock and high order componetns](/simple-clock-high-order)
 
 ![Simple clock!](images/simple_clock.png "Bootstrap experiments")
 
