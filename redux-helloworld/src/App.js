@@ -1,15 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-//import * as Components from './components'
-//import {MainLayout} from './components/MainLayout'
-
-
+import * as components from './components'
+import * as pages from './pages'
 
 function App() {
   return (
-    <Clock2>
-
-    </Clock2>
+    <div>
+      <pages.ParticipantPage/>
+    </div>
+    
   );
 }
 

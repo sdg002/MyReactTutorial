@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Clock2 from './components/Clock2'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Clock2></Clock2>
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );
