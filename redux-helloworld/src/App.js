@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import * as components from './components'
-import * as pages from './pages'
+
+import * as pages from './pages';
+import {DemoStore} from './data/DemoStore';
 
 function App() {
   return (
     <div>
-      <pages.ParticipantPage/>
+      <pages.ParticipantPage store={DemoStore}/>
     </div>
     
   );
