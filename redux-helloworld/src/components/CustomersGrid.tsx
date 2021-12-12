@@ -6,16 +6,16 @@ const CustomersGrid = (props:any) => {
 
     let customerRenderer=():Array<Object>=>{
         let displayItems=customers.map((c)=>{
-            return <div key={c.id}>{c.firstName}</div>
+            return <li key={c.id}>{c.firstName}</li>
         })
         return displayItems;
     }
     return (
         <div>
             customers list comes here. I got '{customers.length}'' customers
-            <ul>
+            <ol>
                 {customerRenderer()}
-            </ul>
+            </ol>
         </div>
     );
 };

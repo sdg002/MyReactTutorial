@@ -8,6 +8,7 @@ const Navbar = () => {
     return (
         <div style={navStyle}>
             <h1>Manage customers page.</h1>
+            <hr/>
         </div>
     );
 };

@@ -42,3 +42,24 @@ The Particpant component was displaying the 2 customers
 You implemented `subscribe` handler
 ## what next?
 Implement "Add customer click"
+
+
+# Public REST apis
+
+# APIs from restcountries.com
+https://restcountries.com/
+
+
+## All countries
+https://restcountries.com/v3.1/all
+
+
+## Get a single country using country code
+https://restcountries.com/v3.1/alpha/per
+
+# APIs from POSTMAN
+https://documenter.getpostman.com/view/1134062/T1LJjU52#2cc72872-d2eb-4811-b6db-1e325b9f0ca0
+
+Example:
+https://countriesnow.space/api/v0.1/countries/iso
+

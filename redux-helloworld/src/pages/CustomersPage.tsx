@@ -1,35 +1,41 @@
-import React from 'react';
+import * as rc from 'react';
 import * as components from './../components'
-//import Store from '../data/DemoStore';
+
 import * as redux from "redux";
 import {CustomerState} from '../data/CustomersState'
+import * as actions from '../data/AllActions';
 
-const ParticipantPage = (props:any) => {
+const CustomersPage = (props:any) => {
+    let store:redux.Store=props.store;
+    const [currrentState,setCurrentState]=rc.useState(store.getState())
     const onRefreshClickHandler=()=>{
         console.log("refresh button was clicked")
+        store.dispatch(actions.refreshCustomers())
     };
 
     console.log("inside ParticipantPange");
     console.log({props})
-    let store:redux.Store=props.store;
-    let currrentState:CustomerState=store.getState();
     console.log({currrentState})
     console.log(`current count of participants is ${currrentState.allCustomers.length}`)
     const storeChangeHandler=()=>{
+        let newState=store.getState()
+        setCurrentState(newState)
         console.log("Store changed")
-        currrentState=store.getState()
+        console.log({currrentState})
     };
     store.subscribe(storeChangeHandler)
     
-
-
     const onAddCustomerClickHandler=()=>{
         console.log("add customer button was clicked")
+        store.dispatch(actions.addCustomer());
     };
     
     const onUploadCustomersClickHandler=()=>{
         console.log("upload customers button was clicked")
     };
+
+    console.log("Render function")
+    console.log({currrentState})
 
     return (
         <div>
@@ -45,4 +51,4 @@ const ParticipantPage = (props:any) => {
     );
 };
 
-export default ParticipantPage;
+export default CustomersPage;

@@ -7,7 +7,7 @@ import {DemoStore} from './data/DemoStore';
 function App() {
   return (
     <div>
-      <pages.ParticipantPage store={DemoStore}/>
+      <pages.CustomersPage store={DemoStore}/>
     </div>
     
   );
