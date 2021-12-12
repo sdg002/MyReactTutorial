@@ -1,25 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import InnerComponent  from './components/InnerComponent';
+import OuterComponent  from './components/OuterComponent';
+import Clock from './components/Clock'
+import Clock2 from './components/Clock2'
+import {Route,Routes ,BrowserRouter as Router} from 'react-router-dom'
+
+
+
+
+
+
 
 
 function App() {
+  
+  const ClockLayout = () => {
+    return (
+      <div>
+        <Clock></Clock>
+        <hr/>
+        <Clock2></Clock2>
+        <hr/>
+        <OuterComponent></OuterComponent>
+      </div>
+    );
+  };
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename="/simple-clock-high-order">
+      <Routes>
+        <Route path="/" element={ClockLayout()}>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -4,23 +4,11 @@ import './index.css';
 import './mystyles.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import InnerComponent  from './components/InnerComponent';
-import OuterComponent  from './components/OuterComponent';
-import Clock from './components/Clock'
-import Clock2 from './components/Clock2'
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <InnerComponent firstName="john doe"></InnerComponent> */}
-    
-      <div>
-        <Clock></Clock>
-        <hr/>
-        <Clock2></Clock2>
-        <hr/>
-        <OuterComponent></OuterComponent>
-      </div>
-    
+    <App></App>    
   </React.StrictMode>,
   document.getElementById('root')
 );
