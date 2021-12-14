@@ -6,7 +6,6 @@ const clockIntervalMs=1000; //ms
 const Clock2 = () => {
     const clockStyle={ backgroundColor:"ghostwhite"}
     const [currentTime,setTime]=rc.useState(null)
-    const [isInitialized,setIsInitialized]=rc.useState(false)
     const [javascriptClockIntervalObject,setJavascriptClockIntervalObject]=rc.useState(null)
 
     let startClockHandler=null;
@@ -24,13 +23,13 @@ const Clock2 = () => {
     //https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once
 
 
-    stopClockHandler=()=>{
+    const stopClockHandler=()=>{
         console.log(`CLOCK2:inside stop handler click ${javascriptClockIntervalObject}`)
         clearInterval(javascriptClockIntervalObject)
         setJavascriptClockIntervalObject(null)
     }
 
-    startClockHandler=()=>{
+    const startClockHandler=()=>{
         console.log(`CLOCK2:inside start handler click ${javascriptClockIntervalObject}`)
         let windowClock=setInterval(timeCallBack,clockIntervalMs);
         setJavascriptClockIntervalObject(windowClock)

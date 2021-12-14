@@ -74,3 +74,41 @@ Then you should have the following as the `basename` value:
 <Router basename="/junksite/simple-clock-high-order">
 ```
 
+
+
+# Running a local web server?
+## The folder static uses node to run a local server
+The packages `serveStatic` and `express` is used
+
+## What is the physical root?
+the folder ./static/
+
+## What is the HTTP root?
+/MyReactTutorial/static/
+
+## How to start the static web server?
+Navigate to the physical ./static/ folder and run the following command
+```
+node index.js
+```
+
+# How to deploy the build output of a React App?
+If the react app is **MyReactApp** and the contents have been compiled to **MyReactApp\build** then copy over the contents of **MyReactApp\build** to a new folder **static\MyReactApp** 
+
+# Next steps
+Write a BAT file which will copy over contents from the individual build folders to the named subfolders under `static`
+
+# Next steps
+Modify the index.html under `\static\` so that it has some narration and links to each of the subfolders
+
+# Next steps
+Explore if wild card can be used to avoid the hard coding below
+```
+    <Router basename="/MyReactTutorial/static/simple-clock-high-order">
+      <Routes>
+        <Route path="/" element={ClockLayout()}>
+        </Route>
+      </Routes>
+    </Router>
+
+```

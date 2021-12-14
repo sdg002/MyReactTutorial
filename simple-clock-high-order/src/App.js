@@ -29,7 +29,7 @@ function App() {
   
 
   return (
-    <Router basename="/junksite/simple-clock-high-order">
+    <Router basename="/MyReactTutorial/static/simple-clock-high-order">
       <Routes>
         <Route path="/" element={ClockLayout()}>
         </Route>

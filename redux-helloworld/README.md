@@ -63,3 +63,19 @@ https://documenter.getpostman.com/view/1134062/T1LJjU52#2cc72872-d2eb-4811-b6db-
 Example:
 https://countriesnow.space/api/v0.1/countries/iso
 
+
+
+# Next steps
+## What has been achieved?
+You have wired up the following Actions
+- Refresh
+- Add
+## Next steps
+- Rename to ParticipantsPageWithStoreSubscribe
+- Add a skeletal new page ParticipantsPageWithReduxHooks
+- Implement a NavBar with 2 links (2 for the above components)
+- Implement a Router and Route in App.js
+- Implement ParticipantsPageWithReduxHooks
+- Implement Delete icon in every LI item of CustomersGrid.tsx
+- Implement Delete call back in the container pages
+
