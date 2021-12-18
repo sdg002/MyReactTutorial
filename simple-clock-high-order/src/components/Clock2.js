@@ -8,9 +8,7 @@ const Clock2 = () => {
     const [currentTime,setTime]=rc.useState(null)
     const [javascriptClockIntervalObject,setJavascriptClockIntervalObject]=rc.useState(null)
 
-    let startClockHandler=null;
-    let stopClockHandler=null;
-
+    
     rc.useEffect(()=>{
         console.log(`CLOCK2:Inside dummy useEffect window clock=${javascriptClockIntervalObject}`)
     });

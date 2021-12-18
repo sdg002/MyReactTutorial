@@ -98,8 +98,17 @@ If the react app is **MyReactApp** and the contents have been compiled to **MyRe
 # Next steps
 Write a BAT file which will copy over contents from the individual build folders to the named subfolders under `static`
 
+# Where should the CopyOver BAT file be located?
+Could be in `\static\` folder. We are pulling over each of the sub-folders into the `\static\` folder
+
+# Should it be a BAT or PowerShell script?
+Could be BAT to start with. When we have established the pattern, we could turn into a PowerShell script which reads from a CSV/JSON file
+
 # Next steps
 Modify the index.html under `\static\` so that it has some narration and links to each of the subfolders
+
+# What about picturesin index.html?
+Have a pics folder for now.
 
 # Next steps
 Explore if wild card can be used to avoid the hard coding below
@@ -112,3 +121,14 @@ Explore if wild card can be used to avoid the hard coding below
     </Router>
 
 ```
+
+# Dynamic basename - try this link
+https://stackoverflow.com/a/66837131/2989655
+This points to https://codesandbox.io/s/react-router-dom-dynamic-basename-xq9tj?file=/url-util.js
+
+The function `getBaseUrlPath` is being used for dynamically setting the `basename` property of the `BrowserRouter`
+
+## Tried a similar approach in Clock component
+Works well!!
+
+# Try publishing BootstrapExperiments

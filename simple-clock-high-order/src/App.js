@@ -27,9 +27,13 @@ function App() {
     );
   };
   
-
+  console.log(document.location.pathname)
+  let frags=document.location.pathname.split('/')
+  let basename=`/${frags[1]}/${frags[2]}/simple-clock-high-order`
+  console.log(`The basename is ${basename}`)
+  
   return (
-    <Router basename="/MyReactTutorial/static/simple-clock-high-order">
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={ClockLayout()}>
         </Route>

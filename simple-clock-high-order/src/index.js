@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <InnerComponent firstName="john doe"></InnerComponent> */}
     <App></App>    
   </React.StrictMode>,
   document.getElementById('root')
