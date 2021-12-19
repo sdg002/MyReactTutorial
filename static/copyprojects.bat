@@ -12,3 +12,8 @@ robocopy ..\%subfolder%\build .\%subfolder%\ /s
 set subfolder=BootStrapExperiments
 rmdir %subfolder% /s /q
 robocopy ..\%subfolder%\build .\%subfolder%\ /s
+
+
+set subfolder=router-with-navbar
+rmdir %subfolder% /s /q
+robocopy ..\%subfolder%\build .\%subfolder%\ /s

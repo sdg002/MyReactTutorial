@@ -1,0 +1,27 @@
+
+nav.bar{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: darkgray;
+}
+a.navlink{
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+}
+.active{
+    font-weight: bold;
+    background-color: ghostwhite;
+    border-color: darkgray;
+
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-left-radius: 7px;
+
+    border-right-color: darkgray;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-right-radius: 7px;
+
+}

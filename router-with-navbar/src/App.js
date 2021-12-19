@@ -7,9 +7,12 @@ import nonexistent from './components/nonexistent';
 import {Route,Routes ,BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
+  let frags=document.location.pathname.split('/')
+  let basename=`/${frags[1]}/${frags[2]}/router-with-navbar`
+
   return (
     <div>
-      <Router>
+      <Router basename={basename}>
         <div>{simplenav()}</div>
         <Routes>
           <Route path="/" element={home()}></Route>
